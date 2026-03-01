@@ -141,7 +141,8 @@ def _tool_list_invoices(state: str = "posted", limit: int = 20) -> str:
             return f"No invoices found with state={state!r}"
         lines = [f"Invoices (state={state}, showing {len(invoices)}):"]
         for inv in invoices:
-            partner = inv.get("partner_id", [None, "Unknown"])[1] if isinstance(inv.get("partner_id"), list) else "Unknown"
+            pid = inv.get("partner_id")
+            partner = pid[1] if isinstance(pid, (list, tuple)) and len(pid) >= 2 else "Unknown"
             lines.append(
                 f"  [{inv['name']}] {partner} — ${inv.get('amount_total', 0):,.2f} | {inv.get('invoice_date', '')} | {inv.get('state', '')}"
             )
