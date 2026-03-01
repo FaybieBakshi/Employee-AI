@@ -5,6 +5,66 @@
       "source": "bilalmk/todo_correct",
       "sourceType": "github",
       "computedHash": "f73daf75e38650c202e61f652a26578db157f8423e8bcf283bcd93b441641461"
+    },
+    "vault-manager": {
+      "source": "local",
+      "sourceType": "local",
+      "description": "Manages the AI Employee Obsidian vault — Bronze Tier"
+    },
+    "gmail-watcher": {
+      "source": "local",
+      "sourceType": "local",
+      "description": "Gmail monitoring watcher setup and operation — Silver Tier"
+    },
+    "linkedin-poster": {
+      "source": "local",
+      "sourceType": "local",
+      "description": "LinkedIn post generation and Playwright-based posting — Silver Tier"
+    },
+    "reasoning-loop": {
+      "source": "local",
+      "sourceType": "local",
+      "description": "Full triage → plan → act → log reasoning cycle — Silver Tier"
+    },
+    "hitl-workflow": {
+      "source": "local",
+      "sourceType": "local",
+      "description": "Human-in-the-Loop approval workflow — Silver Tier"
+    },
+    "email-mcp": {
+      "source": "local",
+      "sourceType": "local",
+      "description": "Email MCP server (send_email / draft_email via SMTP) — Silver Tier"
+    },
+    "odoo-mcp": {
+      "source": "local",
+      "sourceType": "local",
+      "description": "Odoo accounting MCP server (invoices, revenue, expenses) — Gold Tier"
+    },
+    "social-media": {
+      "source": "local",
+      "sourceType": "local",
+      "description": "Facebook, Instagram, Twitter/X posting via MCP + HITL — Gold Tier"
+    },
+    "whatsapp-watcher": {
+      "source": "local",
+      "sourceType": "local",
+      "description": "WhatsApp Web keyword watcher via Playwright — Gold Tier"
+    },
+    "weekly-audit": {
+      "source": "local",
+      "sourceType": "local",
+      "description": "Weekly CEO briefing from Odoo + tasks + social + logs — Gold Tier"
+    },
+    "ralph-wiggum": {
+      "source": "local",
+      "sourceType": "local",
+      "description": "Stop Hook persistence loop — keeps Claude working until task is done — Gold Tier"
+    },
+    "cross-domain": {
+      "source": "local",
+      "sourceType": "local",
+      "description": "Cross-domain orchestration (email+accounting, WhatsApp+social, full pipeline) — Gold Tier"
     }
   }
 }

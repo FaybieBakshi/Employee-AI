@@ -1,0 +1,27 @@
+{
+  "mcpServers": {
+    "email": {
+      "command": "python3",
+      "args": ["-m", "mcp_servers.email_mcp"],
+      "env": {
+        "VAULT_PATH": "AI_Employee_Vault",
+        "DRY_RUN": "true"
+      }
+    },
+    "odoo": {
+      "command": "python3",
+      "args": ["-m", "mcp_servers.odoo_mcp"],
+      "env": {
+        "VAULT_PATH": "AI_Employee_Vault"
+      }
+    },
+    "social": {
+      "command": "python3",
+      "args": ["-m", "mcp_servers.social_mcp"],
+      "env": {
+        "VAULT_PATH": "AI_Employee_Vault",
+        "DRY_RUN": "true"
+      }
+    }
+  }
+}

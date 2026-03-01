@@ -1,0 +1,218 @@
+{
+  "main": {
+    "id": "56c8799cadd54244",
+    "type": "split",
+    "children": [
+      {
+        "id": "6c3e7b5b9b6dd3bf",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c9783386db6a3b09",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "377ec7a137a3e3c0",
+    "type": "split",
+    "children": [
+      {
+        "id": "e38617ecffe3dc9c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "71a00a7c0c7a5063",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "b6976ea6226f89a0",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "93a3eb631bf3d479",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "7498195a4b508e56",
+    "type": "split",
+    "children": [
+      {
+        "id": "c5807128a0f47b2f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "08080bd255da8e78",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "33a5f9c757e25529",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "5ed737277cb3d008",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "60d5412337c02eb5",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "0805f3904108d01f",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "c9783386db6a3b09",
+  "lastOpenFiles": [
+    "AI_Employee_Vault/Plans/Plan_EMAIL_194e1cc8767f158b.md",
+    "AI_Employee_Vault/Needs_Action/FILE_Demo_Client_Contract.txt.md",
+    "AI_Employee_Vault/Done/FILE_Demo_Client_Contract.txt.md",
+    "AI_Employee_Vault/Plans/Plan_FILE_Demo_Client_Contract.txt.md",
+    "AI_Employee_Vault/Inbox/Demo_Client_Contract.txt",
+    "AI_Employee_Vault/Needs_Action/FILE_Demo_Contract_Review.txt.md",
+    "AI_Employee_Vault/Inbox/Demo_Contract_Review.txt",
+    "start_demo.py",
+    "start_full.bat",
+    "start.bat",
+    "AI_Employee_Vault/Briefings/2026-03-01_Weekly_CEO_Briefing.md",
+    "AI_Employee_Vault/Needs_Action/EMAIL_194e1cc8767f158b.md",
+    "AI_Employee_Vault/Needs_Action/EMAIL_194e1e88d73f7f2b.md",
+    "AI_Employee_Vault/Needs_Action/EMAIL_194e204318093d6c.md",
+    "AI_Employee_Vault/Needs_Action/EMAIL_1956d229f04ff5d1.md",
+    "AI_Employee_Vault/Needs_Action/EMAIL_1956e0903b450544.md",
+    "AI_Employee_Vault/Needs_Action/EMAIL_19b4fcdec7c17765.md",
+    "AI_Employee_Vault/Needs_Action/EMAIL_19b7643771b71691.md",
+    "AI_Employee_Vault/Needs_Action/EMAIL_19b768fe245f43f1.md",
+    "AI_Employee_Vault/Needs_Action/EMAIL_19b953b16569b44a.md",
+    "AI_Employee_Vault/Needs_Action/EMAIL_19b98c0191fb1ce3.md",
+    "AI_Employee_Vault/Needs_Action/EMAIL_19baedd308313747.md",
+    "AI_Employee_Vault/Needs_Action/EMAIL_19c662d8a41db4e3.md",
+    "AI_Employee_Vault/Needs_Action/EMAIL_19c83ca1cdd6ca83.md",
+    "AI_Employee_Vault/Needs_Action/EMAIL_19c8f29b4323652c.md",
+    "credentials/gmail_token.json",
+    "credentials/gmail_credentials.json",
+    "credentials",
+    "AI_Employee_Vault/Needs_Action/FILE_Q1_Business_Report.pdf.md",
+    "AI_Employee_Vault/Logs/2026-03-02.json",
+    "AI_Employee_Vault/Done/FILE_Q1_Business_Report.pdf.md",
+    "AI_Employee_Vault/Plans/Plan_FILE_Q1_Business_Report.pdf.md",
+    "AI_Employee_Vault/Inbox/Q1_Business_Report.pdf",
+    "AI_Employee_Vault/Dashboard.md",
+    "README.md",
+    "Personal AI Employee Hackathon 0_ Building Autonomous FTEs in 2026.md"
+  ]
+}

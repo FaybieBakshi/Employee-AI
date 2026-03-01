@@ -1,0 +1,43 @@
+# Secrets — NEVER commit these
+.env
+credentials/
+*.token
+*.pem
+*.key
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+dist/
+build/
+.uv/
+
+# Watchdog / OS
+.DS_Store
+Thumbs.db
+
+# Logs (keep structure, not content)
+AI_Employee_Vault/Logs/*.json
+
+# Gmail credentials — NEVER commit
+credentials/gmail_token.json
+
+# Vault runtime files (keep .gitkeep, not actual content)
+AI_Employee_Vault/Inbox/*
+!AI_Employee_Vault/Inbox/.gitkeep
+AI_Employee_Vault/Needs_Action/*
+!AI_Employee_Vault/Needs_Action/.gitkeep
+AI_Employee_Vault/Done/*
+!AI_Employee_Vault/Done/.gitkeep
+AI_Employee_Vault/Plans/*
+!AI_Employee_Vault/Plans/.gitkeep
+AI_Employee_Vault/Pending_Approval/*
+!AI_Employee_Vault/Pending_Approval/.gitkeep
+AI_Employee_Vault/Approved/*
+!AI_Employee_Vault/Approved/.gitkeep
+AI_Employee_Vault/Rejected/*
+!AI_Employee_Vault/Rejected/.gitkeep
+AI_Employee_Vault/Briefings/*
+AI_Employee_Vault/Logs/*.json
