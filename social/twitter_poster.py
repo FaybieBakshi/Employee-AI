@@ -94,7 +94,8 @@ def _post_tweet_api(text: str) -> dict:
     url = f"{TWITTER_API_BASE}/tweets"
     body = {"text": text}
     body_json = json.dumps(body).encode("utf-8")
-    auth_header = _oauth1_header("POST", url, {}, {"text": text})
+    # Twitter API v2 uses JSON body — do NOT include body in OAuth signature base string
+    auth_header = _oauth1_header("POST", url, {}, None)
 
     req = urllib.request.Request(
         url,
