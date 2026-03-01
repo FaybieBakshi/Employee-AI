@@ -44,6 +44,7 @@ orchestrator        = "orchestrator:main"
 scheduler           = "scheduler:main"
 ralph-wiggum        = "ralph_wiggum:main"
 weekly-audit        = "audit.weekly_audit:main"
+dashboard           = "web_dashboard:main"
 
 [build-system]
 requires = ["hatchling"]
