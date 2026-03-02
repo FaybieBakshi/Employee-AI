@@ -65,6 +65,21 @@
       "source": "local",
       "sourceType": "local",
       "description": "Cross-domain orchestration (email+accounting, WhatsApp+social, full pipeline) — Gold Tier"
+    },
+    "cloud-agent": {
+      "source": "local",
+      "sourceType": "local",
+      "description": "Cloud agent domain ownership, allowed/forbidden actions, claim-by-move protocol — Platinum Tier"
+    },
+    "vault-sync": {
+      "source": "local",
+      "sourceType": "local",
+      "description": "Git sync protocol, single-writer rule, conflict resolution (cloud push / local pull) — Platinum Tier"
+    },
+    "platinum-demo": {
+      "source": "local",
+      "sourceType": "local",
+      "description": "Step-by-step end-to-end Platinum demo verification (Cloud → Local pipeline) — Platinum Tier"
     }
   }
 }

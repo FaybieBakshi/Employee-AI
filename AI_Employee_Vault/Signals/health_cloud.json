@@ -1,0 +1,11 @@
+{
+  "agent": "cloud",
+  "status": "degraded",
+  "timestamp": "2026-03-02T15:55:14.632149+00:00",
+  "checks": {
+    "odoo": "error: [WinError 10061] No connection could be made because the target machine actively refused it",
+    "smtp": "ok",
+    "disk_free_gb": 409.77,
+    "git": "ok"
+  }
+}

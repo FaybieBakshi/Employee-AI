@@ -1,5 +1,5 @@
 """
-orchestrator.py — Master process for the AI Employee (Gold Tier).
+orchestrator.py — Master process for the AI Employee (Gold / Platinum Tier).
 
 Manages all watcher processes and the scheduler in a single command.
 Each watcher runs as a supervised background thread; crashed watchers
@@ -8,16 +8,23 @@ are restarted automatically.
 Also provides the trigger mechanism to invoke Claude Code for reasoning.
 
 Usage:
-  python orchestrator.py                    # start all watchers + scheduler
-  python orchestrator.py --watchers fs      # filesystem watcher only
+  python orchestrator.py                            # start all watchers + scheduler
+  python orchestrator.py --watchers fs              # filesystem watcher only
   python orchestrator.py --watchers fs,approval,whatsapp  # specific watchers
-  python orchestrator.py --no-scheduler     # skip scheduler
+  python orchestrator.py --no-scheduler             # skip scheduler
+  python orchestrator.py --role cloud               # delegate to cloud agent
+  python orchestrator.py --role local --watchers fs,approval,sync,signals
+
+Platinum Tier roles:
+  --role local (default) — Gold-compatible; optionally adds sync/signals watchers
+  --role cloud           — delegates entirely to cloud.orchestrator_cloud.main()
 
 Environment variables (.env):
   VAULT_PATH       — path to vault (default: AI_Employee_Vault)
   DRY_RUN          — if "true", watchers log instead of act (default: true)
   ENABLE_GMAIL     — if "true", start Gmail watcher (needs credentials)
   ENABLE_WHATSAPP  — if "true", start WhatsApp watcher (needs Playwright)
+  AGENT_ROLE       — cloud | local (default: local) — overridden by --role
 """
 
 import argparse
@@ -44,6 +51,7 @@ VAULT_PATH = Path(os.getenv("VAULT_PATH", "AI_Employee_Vault")).resolve()
 DRY_RUN = os.getenv("DRY_RUN", "true").lower() == "true"
 ENABLE_GMAIL = os.getenv("ENABLE_GMAIL", "false").lower() == "true"
 ENABLE_WHATSAPP = os.getenv("ENABLE_WHATSAPP", "false").lower() == "true"
+AGENT_ROLE = os.getenv("AGENT_ROLE", "local")
 
 
 # ──────────────────────────────────────────────────────────────────────
@@ -215,6 +223,33 @@ class Orchestrator:
             except Exception as err:
                 logger.warning(f"Gmail watcher unavailable: {err}")
 
+        if "sync" in self.watchers:
+            try:
+                from sync.vault_sync import VaultSync
+                registry["sync"] = (
+                    "VaultSync",
+                    VaultSync,
+                    [],
+                    {
+                        "role": os.getenv("AGENT_ROLE", "local"),
+                        "interval": int(os.getenv("SYNC_INTERVAL", "60")),
+                    },
+                )
+            except Exception as err:
+                logger.warning(f"VaultSync unavailable: {err}")
+
+        if "signals" in self.watchers:
+            try:
+                from sync.signal_processor import SignalProcessor
+                registry["signals"] = (
+                    "SignalProcessor",
+                    SignalProcessor,
+                    [],
+                    {"interval": int(os.getenv("SIGNAL_CHECK_INTERVAL", "15"))},
+                )
+            except Exception as err:
+                logger.warning(f"SignalProcessor unavailable: {err}")
+
         for key in self.watchers:
             if key not in registry:
                 logger.warning(f"Unknown watcher: {key!r} — skipping")
@@ -277,12 +312,21 @@ class Orchestrator:
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="AI Employee — Orchestrator (Gold Tier)"
+        description="AI Employee — Orchestrator (Gold / Platinum Tier)"
+    )
+    parser.add_argument(
+        "--role",
+        choices=["local", "cloud"],
+        default=AGENT_ROLE,
+        help="Agent role: 'local' (default, Gold-compatible) or 'cloud' (delegates to cloud agent)",
     )
     parser.add_argument(
         "--watchers",
         default="fs,approval",
-        help="Comma-separated watcher names: fs, gmail, approval, whatsapp (default: fs,approval)",
+        help=(
+            "Comma-separated watcher names: fs, gmail, approval, whatsapp, sync, signals "
+            "(default: fs,approval)"
+        ),
     )
     parser.add_argument(
         "--no-scheduler",
@@ -295,6 +339,16 @@ def main() -> None:
         help="Immediately trigger Claude to process Needs_Action, then exit",
     )
     args = parser.parse_args()
+
+    # Platinum: cloud role delegates entirely to cloud orchestrator
+    if args.role == "cloud":
+        try:
+            from cloud.orchestrator_cloud import main as cloud_main
+            cloud_main()
+        except ImportError as err:
+            logger.error(f"Cloud package not available: {err}")
+            raise SystemExit(1)
+        return
 
     if args.process_now:
         process_needs_action()

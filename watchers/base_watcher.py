@@ -34,9 +34,14 @@ class BaseWatcher(ABC):
       - create_action_file(item) -> Path
     """
 
-    def __init__(self, vault_path: str, check_interval: int = 60):
+    def __init__(self, vault_path: str, check_interval: int = 60, domain: str = ""):
         self.vault_path = Path(vault_path).resolve()
-        self.needs_action = self.vault_path / "Needs_Action"
+        self.domain = domain
+        # When domain is set, write action files to the domain subfolder
+        if domain:
+            self.needs_action = self.vault_path / "Needs_Action" / domain
+        else:
+            self.needs_action = self.vault_path / "Needs_Action"
         self.done = self.vault_path / "Done"
         self.logs = self.vault_path / "Logs"
         self.check_interval = check_interval

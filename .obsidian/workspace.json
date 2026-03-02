@@ -176,8 +176,19 @@
       "bases:Create new base": false
     }
   },
-  "active": "c9783386db6a3b09",
+  "active": "71a00a7c0c7a5063",
   "lastOpenFiles": [
+    "AI_Employee_Vault/Done/EMAIL_194e1cc8767f158b.md",
+    "AI_Employee_Vault/Signals/health_cloud.json",
+    "AI_Employee_Vault/Signals",
+    "sync/__pycache__/signal_processor.cpython-314.pyc",
+    "sync/__pycache__/__init__.cpython-314.pyc",
+    "sync/__pycache__/vault_sync.cpython-314.pyc",
+    "sync/__pycache__",
+    "cloud/__pycache__/health_monitor.cpython-314.pyc",
+    "cloud/__pycache__/claim_manager.cpython-314.pyc",
+    "cloud/__pycache__/__init__.cpython-314.pyc",
+    "cloud/__pycache__/orchestrator_cloud.cpython-314.pyc",
     "AI_Employee_Vault/Briefings/2026-03-02_Weekly_CEO_Briefing.md",
     "AI_Employee_Vault/Plans/Plan_EMAIL_19b953b16569b44a.md",
     "AI_Employee_Vault/Plans/Plan_EMAIL_19b98c0191fb1ce3.md",
@@ -188,23 +199,13 @@
     "AI_Employee_Vault/Plans/Plan_FILE_Demo_Contract_Review.txt.md",
     "AI_Employee_Vault/Pending_Approval/REVIEW_EMAIL_19b953b16569b44a.md",
     "AI_Employee_Vault/Pending_Approval/REVIEW_EMAIL_19baedd308313747.md",
-    "start_dashboard.bat",
-    "__pycache__/web_dashboard.cpython-314.pyc",
-    "web_dashboard.py",
-    "AI_Employee_Vault/Done/Q1_Business_Report.pdf",
-    "AI_Employee_Vault/Done/Demo_Contract_Review.txt",
-    "AI_Employee_Vault/Done/Demo_Client_Contract.txt",
     "AI_Employee_Vault/Plans/Plan_Q1_Business_Report.pdf.md",
     "AI_Employee_Vault/Plans/Plan_Demo_Contract_Review.txt.md",
     "AI_Employee_Vault/Plans/Plan_Demo_Client_Contract.txt.md",
-    "AI_Employee_Vault/In_Progress/Q1_Business_Report.pdf",
-    "AI_Employee_Vault/In_Progress/Demo_Contract_Review.txt",
-    "AI_Employee_Vault/In_Progress/Demo_Client_Contract.txt",
     "AI_Employee_Vault/Plans/Plan_EMAIL_194e1cc8767f158b.md",
     "AI_Employee_Vault/Needs_Action/FILE_Demo_Client_Contract.txt.md",
     "AI_Employee_Vault/Done/FILE_Demo_Client_Contract.txt.md",
     "AI_Employee_Vault/Plans/Plan_FILE_Demo_Client_Contract.txt.md",
-    "AI_Employee_Vault/Inbox/Demo_Client_Contract.txt",
     "AI_Employee_Vault/Needs_Action/FILE_Demo_Contract_Review.txt.md",
     "AI_Employee_Vault/Briefings/2026-03-01_Weekly_CEO_Briefing.md",
     "AI_Employee_Vault/Needs_Action/EMAIL_194e1cc8767f158b.md",
@@ -212,7 +213,6 @@
     "AI_Employee_Vault/Needs_Action/EMAIL_194e204318093d6c.md",
     "AI_Employee_Vault/Needs_Action/EMAIL_1956d229f04ff5d1.md",
     "AI_Employee_Vault/Needs_Action/EMAIL_1956e0903b450544.md",
-    "AI_Employee_Vault/Needs_Action/EMAIL_19b4fcdec7c17765.md",
-    "AI_Employee_Vault/Needs_Action/EMAIL_19b7643771b71691.md"
+    "AI_Employee_Vault/Needs_Action/EMAIL_19b4fcdec7c17765.md"
   ]
 }

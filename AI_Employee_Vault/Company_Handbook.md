@@ -1,9 +1,9 @@
 # Company Handbook — Rules of Engagement
 
 ---
-last_updated: 2026-02-28
-version: 3.0
-tier: gold
+last_updated: 2026-03-02
+version: 4.0
+tier: platinum
 owner: Human (you)
 ---
 
@@ -174,6 +174,79 @@ Time Zone              : UTC (update this)
 - Alternatively, move the active task file to `/Done` to signal completion.
 - Maximum iterations: `RALPH_MAX_ITERATIONS` (default: 10) — then exit regardless.
 - Do not output the promise string unless ALL assigned tasks are truly complete.
+
+---
+
+---
+
+## 16. Platinum Rules (Platinum Tier)
+
+### 16.1 Domain Ownership Table
+
+| Vault Path | Owner Agent | Notes |
+|---|---|---|
+| `Needs_Action/cloud/` | Cloud | Cloud-only action queue |
+| `Needs_Action/local/` | Local | Local-only action queue |
+| `Plans/cloud/` | Cloud | Cloud reasoning plans |
+| `Plans/local/` | Local | Local reasoning plans |
+| `Pending_Approval/cloud/` | Cloud | Drafts awaiting approval |
+| `Pending_Approval/local/` | Local | Local approvals |
+| `In_Progress/cloud/` | Cloud | Currently claimed by cloud |
+| `In_Progress/local/` | Local | Currently claimed by local |
+| `Updates/` | Cloud | Update fragments for Dashboard |
+| `Signals/` | Cloud | Health heartbeat files |
+| `Dashboard.md` | Local | Local ONLY — cloud never commits |
+| `Done/` | Both | Either agent may move items here |
+
+### 16.2 Folder Ownership Rules
+
+- **Cloud agent** may only write to cloud-owned paths (column above).
+- **Cloud agent** must never commit `Dashboard.md` or `local`-prefixed paths.
+- **Local agent** must never write to cloud-owned paths (race condition risk).
+- Both agents may read any path.
+
+### 16.3 Sync Rules
+
+- **Single-writer rule**: each path has exactly one writer. Never violate this.
+- Cloud syncs by: `git add <cloud-owned-paths>` → `git commit` → `git push`.
+- Local syncs by: `git fetch` → `git rebase FETCH_HEAD`.
+- Conflict on cloud path: cloud wins (`--theirs`).
+- Conflict on `Dashboard.md`: local wins (`--ours`).
+- Sync interval: every `SYNC_INTERVAL` seconds (default: 60).
+
+### 16.4 Cloud Agent Constraints (Draft-Only)
+
+The cloud agent is **draft-only**. It must never:
+- Send emails (no `send_email` MCP call)
+- Post to social media
+- Access WhatsApp
+- Execute payments or banking actions
+- Write `Dashboard.md` directly
+
+All cloud outputs go to `Pending_Approval/cloud/` for human review on the local agent.
+
+### 16.5 Claim-by-Move Rule (Atomic)
+
+To prevent race conditions between agents:
+1. An agent claims a file by calling `os.rename(source, destination)`.
+2. `os.rename()` is atomic on the same filesystem — no partial states.
+3. If `FileNotFoundError` is raised, another agent won the race; skip the file.
+4. Never use copy+delete for claiming.
+
+### 16.6 Platinum Demo Sequence
+
+```
+1. Email arrives in Gmail
+2. Cloud GmailWatcher → Needs_Action/cloud/EMAIL_<id>.md
+3. Cloud ClaimManager → moves to In_Progress/cloud/EMAIL_<id>.md
+4. Cloud triggers Claude → drafts reply → Pending_Approval/cloud/DRAFT_<id>.md
+5. Cloud VaultSync → git push cloud-owned paths
+6. Local VaultSync → git pull + rebase
+7. Human reviews Pending_Approval/cloud/DRAFT_<id>.md
+8. Human moves to Approved/ (or edits first)
+9. Local ApprovalWatcher → dispatches → sends email (DRY_RUN=false)
+10. Item moved to Done/
+```
 
 ---
 

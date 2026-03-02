@@ -1,0 +1,62 @@
+
+--- Started 2026-03-02T20:04:46.572921 ---
+2026-03-02T20:04:49 [INFO] orchestrator: AI Employee Orchestrator starting
+2026-03-02T20:04:49 [INFO] orchestrator:   Vault:    C:\Users\Binab\Downloads\Hackathon-0-ai\Employee-AI\AI_Employee_Vault
+2026-03-02T20:04:49 [INFO] orchestrator:   Dry run:  True
+2026-03-02T20:04:49 [INFO] orchestrator:   Watchers: fs, gmail, approval
+2026-03-02T20:04:51 [INFO] orchestrator.FilesystemWatcher: Starting FilesystemWatcher
+2026-03-02T20:04:51 [INFO] orchestrator:   Started: FilesystemWatcher
+2026-03-02T20:04:51 [INFO] orchestrator.GmailWatcher: Starting GmailWatcher
+2026-03-02T20:04:51 [INFO] orchestrator:   Started: GmailWatcher
+2026-03-02T20:04:51 [INFO] orchestrator.ApprovalWatcher: Starting ApprovalWatcher
+2026-03-02T20:04:51 [INFO] orchestrator:   Started: ApprovalWatcher
+2026-03-02T20:04:51 [INFO] orchestrator:   Started: Scheduler
+2026-03-02T20:04:51 [INFO] orchestrator: Orchestrator running. Press Ctrl+C to stop.
+
+2026-03-02T20:04:51 [INFO] FilesystemWatcher: Filesystem Watcher starting — monitoring: C:\Users\Binab\Downloads\Hackathon-0-ai\Employee-AI\AI_Employee_Vault\Inbox
+2026-03-02T20:04:51 [INFO] FilesystemWatcher: Press Ctrl+C to stop.
+
+2026-03-02T20:04:51 [INFO] FilesystemWatcher: Startup scan: Inbox is empty — watching for new files...
+2026-03-02T20:04:51 [INFO] GmailWatcher: [DRY RUN] Mode active — action files will be created but no real changes made
+2026-03-02T20:04:51 [INFO] GmailWatcher: Starting GmailWatcher (vault=C:\Users\Binab\Downloads\Hackathon-0-ai\Employee-AI\AI_Employee_Vault, interval=120s)
+2026-03-02T20:04:51 [INFO] ApprovalWatcher: [DRY RUN] Mode active — actions logged but not executed
+2026-03-02T20:04:51 [INFO] ApprovalWatcher: Approval Watcher starting — vault: C:\Users\Binab\Downloads\Hackathon-0-ai\Employee-AI\AI_Employee_Vault
+2026-03-02T20:04:51 [INFO] ApprovalWatcher:   Watching: Pending_Approval/ | Approved/ | Rejected/
+2026-03-02T20:04:51 [INFO] ApprovalWatcher: Press Ctrl+C to stop.
+
+2026-03-02T20:04:51 [INFO] scheduler: Scheduled: daily dashboard update at 08:00
+2026-03-02T20:04:51 [INFO] scheduler: Scheduled: weekly CEO briefing every monday at 08:00
+2026-03-02T20:04:51 [INFO] scheduler: Scheduled: LinkedIn post every sunday at 20:00
+2026-03-02T20:04:51 [INFO] scheduler: Scheduled: Needs_Action check every 30 minutes
+2026-03-02T20:04:51 [INFO] scheduler: Scheduler running...
+2026-03-02T20:05:02 [INFO] googleapiclient.discovery_cache: file_cache is only supported with oauth2client<4.0.0
+2026-03-02T20:05:03 [INFO] GmailWatcher: Gmail: 14 new message(s) found
+2026-03-02T20:05:03 [INFO] GmailWatcher: Found 14 new item(s)
+2026-03-02T20:05:03 [INFO] GmailWatcher: [DRY RUN] Would write: EMAIL_19c8f29b4323652c.md
+2026-03-02T20:05:03 [INFO] GmailWatcher: Created action file: EMAIL_19c8f29b4323652c.md
+2026-03-02T20:05:04 [INFO] GmailWatcher: [DRY RUN] Would write: EMAIL_19c83ca1cdd6ca83.md
+2026-03-02T20:05:04 [INFO] GmailWatcher: Created action file: EMAIL_19c83ca1cdd6ca83.md
+2026-03-02T20:05:04 [INFO] GmailWatcher: [DRY RUN] Would write: EMAIL_19c662d8a41db4e3.md
+2026-03-02T20:05:04 [INFO] GmailWatcher: Created action file: EMAIL_19c662d8a41db4e3.md
+2026-03-02T20:05:04 [INFO] GmailWatcher: [DRY RUN] Would write: EMAIL_19baedd308313747.md
+2026-03-02T20:05:04 [INFO] GmailWatcher: Created action file: EMAIL_19baedd308313747.md
+2026-03-02T20:05:04 [INFO] GmailWatcher: [DRY RUN] Would write: EMAIL_19b98c0191fb1ce3.md
+2026-03-02T20:05:04 [INFO] GmailWatcher: Created action file: EMAIL_19b98c0191fb1ce3.md
+2026-03-02T20:05:05 [INFO] GmailWatcher: [DRY RUN] Would write: EMAIL_19b953b16569b44a.md
+2026-03-02T20:05:05 [INFO] GmailWatcher: Created action file: EMAIL_19b953b16569b44a.md
+2026-03-02T20:05:05 [INFO] GmailWatcher: [DRY RUN] Would write: EMAIL_19b768fe245f43f1.md
+2026-03-02T20:05:05 [INFO] GmailWatcher: Created action file: EMAIL_19b768fe245f43f1.md
+2026-03-02T20:05:05 [INFO] GmailWatcher: [DRY RUN] Would write: EMAIL_19b7643771b71691.md
+2026-03-02T20:05:05 [INFO] GmailWatcher: Created action file: EMAIL_19b7643771b71691.md
+2026-03-02T20:05:05 [INFO] GmailWatcher: [DRY RUN] Would write: EMAIL_19b4fcdec7c17765.md
+2026-03-02T20:05:05 [INFO] GmailWatcher: Created action file: EMAIL_19b4fcdec7c17765.md
+2026-03-02T20:05:06 [INFO] GmailWatcher: [DRY RUN] Would write: EMAIL_1956e0903b450544.md
+2026-03-02T20:05:06 [INFO] GmailWatcher: Created action file: EMAIL_1956e0903b450544.md
+2026-03-02T20:05:06 [INFO] GmailWatcher: [DRY RUN] Would write: EMAIL_1956d229f04ff5d1.md
+2026-03-02T20:05:06 [INFO] GmailWatcher: Created action file: EMAIL_1956d229f04ff5d1.md
+2026-03-02T20:05:06 [INFO] GmailWatcher: [DRY RUN] Would write: EMAIL_194e204318093d6c.md
+2026-03-02T20:05:06 [INFO] GmailWatcher: Created action file: EMAIL_194e204318093d6c.md
+2026-03-02T20:05:06 [INFO] GmailWatcher: [DRY RUN] Would write: EMAIL_194e1e88d73f7f2b.md
+2026-03-02T20:05:06 [INFO] GmailWatcher: Created action file: EMAIL_194e1e88d73f7f2b.md
+2026-03-02T20:05:06 [INFO] GmailWatcher: [DRY RUN] Would write: EMAIL_194e1cc8767f158b.md
+2026-03-02T20:05:06 [INFO] GmailWatcher: Created action file: EMAIL_194e1cc8767f158b.md

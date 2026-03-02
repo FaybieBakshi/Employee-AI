@@ -1,28 +1,16 @@
 # AI Employee Dashboard
 
 ---
-last_updated: 2026-03-02T05:04:00.585174+00:00
+last_updated: 2026-03-02T16:22:00Z
 status: active
-version: 0.3.0-gold
+version: 0.4.0-platinum
 ---
 
 ## System Status
 
-| Component           | Status   | Last Check         |
-|---------------------|----------|--------------------|
-| Filesystem Watcher  | ⬜ Off   | —                  |
-| Gmail Watcher       | ⬜ Off   | —                  |
-| WhatsApp Watcher    | ⬜ Off   | —                  |
-| Approval Watcher    | ⬜ Off   | —                  |
-| Scheduler           | ⬜ Off   | —                  |
-| Email MCP Server    | ⬜ Off   | —                  |
-| Odoo MCP Server     | ⬜ Off   | —                  |
-| Social MCP Server   | ⬜ Off   | —                  |
-| Ralph Wiggum Hook   | ⬜ Off   | —                  |
-| Vault               | ✅ Ready | 2026-02-28         |
-| Claude Code         | ✅ Ready | 2026-02-28         |
-
----
+| Agent | Status | Last Check | Details |
+|-------|--------|------------|---------|
+| cloud | ⚠️ degraded | 2026-03-02T15:55:14 | odoo:error: [WinError 10061] No connection could be made because the target machine actively refused it, smtp:ok, disk_free_gb:409.77, git:ok |
 
 ## Inbox Summary
 
@@ -31,15 +19,16 @@ version: 0.3.0-gold
 | Metric               | Count |
 |----------------------|-------|
 | Inbox (unprocessed)  | 0     |
-| Needs Action      | 0     |
-| Plans Active      | 20     |
+| Needs Action         | 0     |
+| Plans Active         | 34    |
 | Pending Approval     | 2     |
 | In Progress          | 0     |
-| Done (today)      | 17     |
+| Done (today)         | 31    |
 
 ---
 
 ## Recent Activity
+- [2026-03-02 16:22 UTC] Reasoning loop complete — 14/14 emails processed → Done, 0 replies needed, 0 approvals pending
 - [2026-03-02 05:04 UTC] Scheduled daily update — Needs_Action: 0, Plans: 20, Done: 17
 
 - [2026-03-02 08:00 UTC] Inbox processing complete — 3/3 items processed: ACME Corp contract + duplicate + Q1 report → Done, 3 plans created, 0 approvals
